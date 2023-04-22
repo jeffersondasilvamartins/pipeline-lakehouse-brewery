@@ -49,10 +49,16 @@ Clicar no link = `dag_ingestion_bronze` em seguida no play conforme imagens abai
 Clicar no link = `dag_ingestion_silver` em seguida no play conforme imagens abaixo
 ![Alt text](img/airflow_04.png)
 ![Alt text](img/airflow_05.png)
-### Executar carga das visões de negócio
-Clicar no link = `dag_delivery_location_by_brewery_type` em seguida no play conforme imagens abaixo
+### Executar carga camada Gold
+1. ***Visão location_by_brewery_type***<p>
+Clicar no link = `dag_delivery_location_by_brewery_type`  em seguida no play conforme imagens abaixo
 ![Alt text](img/airflow_06.png)
 ![Alt text](img/airflow_07.png)
+2. ***Visão brewery_type_by_state***<p>
+Clicar no link = `dag_delivery_brewery_type_by_state`  em seguida no play conforme imagens abaixo
+![Alt text](img/airflow_08.png)
+![Alt text](img/airflow_09.png)
+
 ## Acessando repositório
 
 Abrir um terminal (acesso via ssh) e na linha de comando digitar a seguinte linha:
