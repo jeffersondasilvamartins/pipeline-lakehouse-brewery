@@ -68,6 +68,7 @@ def main():
     log.info(f'Write Bronze delta table')    
     (df_source.write
         .format('delta')
+        .option("overwriteSchema", "true")
         .mode("overwrite")
         .save(f'{bucket}/{table}')
     )

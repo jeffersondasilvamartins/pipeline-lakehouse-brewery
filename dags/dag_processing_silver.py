@@ -25,7 +25,8 @@ local_tz = pendulum.timezone("America/Sao_Paulo")
 table = 'brewery'
 bronze_bucket = Variable.get("BRONZE_BUCKET")
 silver_bucket = Variable.get("SILVER_BUCKET")
-script_home='/root/scripts'
+script_path_filename= Variable.get("ARTIFACTS_BUCKET")
+script_path_filename += "/spark/data_processing_silver_table.py"
 
 default_args = {
     'onwer': 'data engineering',
@@ -53,7 +54,13 @@ with DAG(dag_id=f'dag_processing_silver',
 
     spark_submit = BashOperator(
         task_id="spark_submit",
-        bash_command=f"spark-submit --master local[*]  --packages io.delta:delta-core_2.12:2.1.0 {script_home}/data_processing_silver_table.py {bronze_bucket} {silver_bucket} {table}",
+        bash_command=f"spark-submit \
+                --master local[*] \
+                --packages io.delta:delta-core_2.12:2.1.0 \
+                {script_path_filename} \
+                {bronze_bucket} \
+                {silver_bucket} \
+                {table}",
     )
 
     end_pipeline = DummyOperator(task_id = 'end_pipeline')

@@ -23,8 +23,9 @@ from airflow.models import Variable
 #[START variable definition]
 local_tz = pendulum.timezone("America/Sao_Paulo")
 table = 'brewery'
-bucket = Variable.get("BRONZE_BUCKET")
-script_home='/root/scripts'
+bronze_bucket = Variable.get("BRONZE_BUCKET")
+script_path_filename= Variable.get("ARTIFACTS_BUCKET")
+script_path_filename += "/spark/data_ingestion_bronze_table.py"
 
 default_args = {
     'onwer': 'data engineering',
@@ -43,7 +44,7 @@ with DAG(dag_id=f'dag_ingestion_bronze',
             default_args=default_args,
             schedule_interval=None,
             catchup=False,
-            max_active_tasks=10,
+            max_active_tasks=1,
             max_active_runs=1,
             tags=['spark', 'bronze','bees']
 ) as dag:
@@ -52,7 +53,12 @@ with DAG(dag_id=f'dag_ingestion_bronze',
 
     spark_submit = BashOperator(
         task_id="spark_submit",
-        bash_command=f"spark-submit --master local[*]  --packages io.delta:delta-core_2.12:2.1.0 {script_home}/data_ingestion_bronze_table.py {bucket} {table}",
+        bash_command=f"spark-submit \
+            --master local[*]  \
+            --packages io.delta:delta-core_2.12:2.1.0 \
+            {script_path_filename}\
+            {bronze_bucket} \
+            {table}",
     )
 
     end_pipeline = DummyOperator(task_id = 'end_pipeline')

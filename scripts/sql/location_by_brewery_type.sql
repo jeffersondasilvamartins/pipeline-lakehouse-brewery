@@ -2,7 +2,7 @@ select
     latitude, 
     longitude, 
     brewery_type, 
-    count(*) qtd  
+    count(*) qty
  from tb_brewery 
 group by 
     latitude, 
@@ -10,4 +10,4 @@ group by
     brewery_type
 order by 
     brewery_type, 
-    qtd desc
+    qty desc

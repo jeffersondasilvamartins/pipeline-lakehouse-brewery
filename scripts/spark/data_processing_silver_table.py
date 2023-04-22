@@ -91,10 +91,11 @@ def main():
         )
     except:
         log.info(f'Full load - New table - {silver_bucket}/{table}')
+
         (df_brewery_select.write
             .format('delta')
             .option("overwriteSchema", "true")
-            .partitionBy('state')
+            .partitionBy(*['latitude', 'longitude'])
             .mode("overwrite")
             .save(f'{silver_bucket}/{table}')
         )

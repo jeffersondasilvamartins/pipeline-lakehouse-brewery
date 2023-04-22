@@ -16,8 +16,8 @@ from pyspark.sql import functions as F
 from datetime import datetime
 from delta.tables import *
 
-def read_sql_file(file_name):
-    with open(f"/root/scripts/sql/{file_name}") as fr:
+def read_sql_file(path_file_name):
+    with open(f"{path_file_name}") as fr:
         query = fr.read()
     return query
 
@@ -46,9 +46,12 @@ def main():
     log.info(f'Create Gold table - {gold_bucket}/{gold_table}')
     (df_gold.write
         .format('delta')
+        .option("overwriteSchema", "true")
         .mode("overwrite")
         .save(f'{gold_bucket}/{gold_table}')
     )
+
+    df_gold.show(df_gold.count(), False)
 
     spark.stop()
 

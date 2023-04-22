@@ -29,9 +29,9 @@ gold_table = 'location_by_brewery_type'
 gold_bucket = Variable.get("GOLD_BUCKET")
 silver_bucket = Variable.get("SILVER_BUCKET")
 
-script_home='/root/scripts'
-script_pathname=f'{script_home}/data_delivery_gold_table.py'
-sql_name='location_by_brewery_type.sql'
+artifacts_bucket = Variable.get("ARTIFACTS_BUCKET")
+script_path_filename = artifacts_bucket + "/spark/data_delivery_gold_table.py"
+sql_path_filename = artifacts_bucket + '/sql/location_by_brewery_type.sql'
 
 default_args = {
     'onwer': 'data engineering',
@@ -62,12 +62,12 @@ with DAG(dag_id=f'dag_delivery_location_by_brewery_type',
         bash_command=f"spark-submit \
             --master local[*]  \
             --packages io.delta:delta-core_2.12:2.1.0 \
-            {script_pathname} \
+            {script_path_filename} \
             {silver_bucket} \
             {gold_bucket} \
             {silver_table} \
             {gold_table} \
-            {sql_name}",
+            {sql_path_filename}",
     )
 
     end_pipeline = DummyOperator(task_id = 'end_pipeline')
