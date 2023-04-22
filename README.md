@@ -33,6 +33,31 @@ Na pasta `dags` temos o código reponsável pela definição da DAG
 Na pasta `scripts/spark` temos o código pyspark responsável pela carga dos dados
 
 Na pasta `scripts/sql` temos o *SELECT* para criação da visão de negócio
+
+***
+## Execução das DAGs
+Clique no link para ser direcionada para a `Airflow UI` 
+
+![Alt text](img/airflow_01.png)
+
+### Executar carga camada Bronze
+Clicar no link = `dag_ingestion_bronze` em seguida no play conforme imagens abaixo
+![Alt text](img/airflow_03.png)
+![Alt text](img/airflow_02.png)
+
+### Executar carga camada Silver
+Clicar no link = `dag_ingestion_silver` em seguida no play conforme imagens abaixo
+![Alt text](img/airflow_04.png)
+![Alt text](img/airflow_05.png)
+### Executar carga das visões de negócio
+Clicar no link = `dag_delivery_location_by_brewery_type` em seguida no play conforme imagens abaixo
+![Alt text](img/airflow_06.png)
+![Alt text](img/airflow_07.png)
+## Acessando repositório
+
+Abrir um terminal (acesso via ssh) e na linha de comando digitar a seguinte linha:
+
+
 ### Check directory
 ```bash
 cd /root/lakehouse
@@ -41,7 +66,7 @@ cd /root/lakehouse
 - item 1
 * item 3
 
-***
+
 
 ## <a id="anchortext" />Header text
 <p>
