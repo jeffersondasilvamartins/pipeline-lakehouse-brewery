@@ -25,7 +25,7 @@ def main():
                 .getOrCreate()
     )
 
-    setLogLevel = "INFO"
+    setLogLevel = "ERROR"
     spark.sparkContext.setLogLevel(setLogLevel)
 
     #Read bronze delta table

@@ -1,6 +1,6 @@
 #
 '''
-Script: dag_delivery_gold.py
+Script: dag_delivery_brewery_type_by_state.py
 Author: Jefferson da S Martins
 Version: 1.0.0
 '''
@@ -24,14 +24,14 @@ from airflow.models import Variable
 local_tz = pendulum.timezone("America/Sao_Paulo")
 
 silver_table = 'brewery'
-gold_table = 'store_by_location'
+gold_table = 'brewery_type_by_state'
 
 gold_bucket = Variable.get("GOLD_BUCKET")
 silver_bucket = Variable.get("SILVER_BUCKET")
 
 script_home='/root/scripts'
 script_pathname=f'{script_home}/data_delivery_gold_table.py'
-sql_name='type_location.sql'
+sql_name='brewery_type_by_state.sql'
 
 default_args = {
     'onwer': 'data engineering',
@@ -40,17 +40,17 @@ default_args = {
     'email': ['email@email.com'],
     'email_on_failure': False,
     'email_on_retry': False,
-    'retries': 5,
+    'retries': 3,
 }
 #[END variable definition]
 
 
-with DAG(dag_id=f'dag_delivery_gold',
-            description=f'Ingestion Gold layer',
+with DAG(dag_id=f'dag_delivery_brewery_type_by_state',
+            description=f'Gold table-brewery_type_by_state',
             default_args=default_args,
             schedule_interval=None,
             catchup=False,
-            max_active_tasks=10,
+            max_active_tasks=1,
             max_active_runs=1,
             tags=['spark', 'gold','bees']
 ) as dag:
@@ -59,7 +59,15 @@ with DAG(dag_id=f'dag_delivery_gold',
 
     spark_submit = BashOperator(
         task_id="spark_submit",
-        bash_command=f"spark-submit --master local[*]  --packages io.delta:delta-core_2.12:2.1.0 {script_pathname} {silver_bucket} {gold_bucket} {silver_table} {gold_table} {sql_name}",
+        bash_command=f"spark-submit \
+            --master local[*]  \
+            --packages io.delta:delta-core_2.12:2.1.0 \
+            {script_pathname} \
+            {silver_bucket} \
+            {gold_bucket} \
+            {silver_table} \
+            {gold_table} \
+            {sql_name}",
     )
 
     end_pipeline = DummyOperator(task_id = 'end_pipeline')
