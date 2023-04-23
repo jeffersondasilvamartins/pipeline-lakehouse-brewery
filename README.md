@@ -45,13 +45,13 @@ Clique no link para ser direcionada para a `Airflow UI`
 ![Alt text](img/airflow_01.png)
 
 ### Executar carga do Pipeline
-Clicar no link = `dag_ingestion_bronze` em seguida no play conforme imagens abaixo
+Clicar no link = `dag_pipeline_lakehouse` em seguida no play conforme imagens abaixo
 ![Alt text](img/airflow_10.png)
 ![Alt text](img/airflow_12.png)
 ***
 ## :rocket: Acessando Storage
 
-:closed_lock_with_key: Conectando Virtual Machine<p>
+:closed_lock_with_key: Conectando na Virtual Machine<p>
 >_Máquina Windows instalar algum aplicativo para conexão ssh_
 
 Abrir um terminal:
