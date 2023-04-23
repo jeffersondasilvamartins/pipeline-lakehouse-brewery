@@ -47,8 +47,7 @@ Clique no link para ser direcionada para a `Airflow UI`
 ### Executar carga do Pipeline
 Clicar no link = `dag_ingestion_bronze` em seguida no play conforme imagens abaixo
 ![Alt text](img/airflow_10.png)
-![Alt text](img/airflow_11.png)
-
+![Alt text](img/airflow_12.png)
 ***
 ## :rocket: Acessando Storage
 
