@@ -57,6 +57,10 @@ def main():
         F.col('system_name').alias('system_name'),
     )
 
+    df_brewery_select = df_brewery_select\
+                            .na.fill('unknown', ["latitude"])\
+                            .na.fill('unknown', ['longitude'])
+
     try:
         #Read silver delta table
         delta_silver_table = DeltaTable.forPath(spark, f'{silver_bucket}/{table}')

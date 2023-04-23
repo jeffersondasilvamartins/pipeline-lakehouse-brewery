@@ -42,30 +42,16 @@ Clique no link para ser direcionada para a `Airflow UI`
 
 ![Alt text](img/airflow_01.png)
 
-### Executar carga camada Bronze
+### Executar carga do Pipeline
 Clicar no link = `dag_ingestion_bronze` em seguida no play conforme imagens abaixo
-![Alt text](img/airflow_03.png)
-![Alt text](img/airflow_02.png)
-
-### Executar carga camada Silver
-Clicar no link = `dag_ingestion_silver` em seguida no play conforme imagens abaixo
-![Alt text](img/airflow_04.png)
-![Alt text](img/airflow_05.png)
-### Executar carga camada Gold
-1. ***Visão location_by_brewery_type***<p>
-Clicar no link = `dag_delivery_location_by_brewery_type`  em seguida no play conforme imagens abaixo
-![Alt text](img/airflow_06.png)
-![Alt text](img/airflow_07.png)
-2. ***Visão brewery_type_by_state***<p>
-Clicar no link = `dag_delivery_brewery_type_by_state`  em seguida no play conforme imagens abaixo
-![Alt text](img/airflow_08.png)
-![Alt text](img/airflow_09.png)
+![Alt text](img/airflow_10.png)
+![Alt text](img/airflow_11.png)
 
 ***
 ## :rocket: Acessando Storage
 
 :closed_lock_with_key: Conectando Virtual Machine<p>
->_Máquina Windows instalar algum aplicativo para conectão ssh_
+>_Máquina Windows instalar algum aplicativo para conexão ssh_
 
 Abrir um terminal:
 
