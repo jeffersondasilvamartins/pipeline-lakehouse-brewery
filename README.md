@@ -34,7 +34,9 @@ Na pasta `scripts/spark` temos o código pyspark responsável pela carga dos dad
 
 Na pasta `scripts/sql` temos o *SELECT* para criação da visão de negócio
 
+
 ***
+
 ## Execução das DAGs
 Clique no link para ser direcionada para a `Airflow UI` 
 
@@ -59,23 +61,28 @@ Clicar no link = `dag_delivery_brewery_type_by_state`  em seguida no play confor
 ![Alt text](img/airflow_08.png)
 ![Alt text](img/airflow_09.png)
 
-## Acessando repositório
+***
+## :rocket: Acessando Storage
 
-Abrir um terminal (acesso via ssh) e na linha de comando digitar a seguinte linha:
+:closed_lock_with_key: Conectando Virtual Machine<p>
+>_Máquina Windows instalar algum aplicativo para conectão ssh_
 
+Abrir um terminal:
 
-### Check directory
+#### Step by step 
+1. Conexão via ssh
 ```bash
-cd /root/lakehouse
+ssh lakehouse@64.226.107.26
 ```
-
-- item 1
-* item 3
-
-
-
-## <a id="anchortext" />Header text
-<p>
-
-To go to a section on the same page:
-[text](#anchortext)
+2. Ir pra a pasta
+```bash
+cd lakehouse
+.
+├── bronze
+│   └── brewery
+├── gold
+│   ├── brewery_type_by_state
+│   └── location_by_brewery_type
+└── silver
+    └── brewery
+```
