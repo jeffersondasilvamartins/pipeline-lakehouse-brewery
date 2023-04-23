@@ -1,4 +1,6 @@
 # Consumindo API e persistindo num Data Lakehouse
+![#](https://img.shields.io/badge/license-Apache-blue)
+
 Criação de um Data Lakehouse utilizando arquitetura [Medallion Architecture](https://www.databricks.com/glossary/medallion-architecture)
 
 Basicamente consumindo uma API, realizando tratamento dos dados e entregando tabelas agregadas.
@@ -58,11 +60,13 @@ Abrir um terminal:
 #### Step by step 
 1. Conexão via ssh
 ```bash
-ssh lakehouse@64.226.107.26
+ssh user@xx.xxx.xxx.xx
 ```
-2. Ir pra a pasta
+2. Ir pra a pasta principal
 ```bash
 cd lakehouse
+
+# Árvore das demais pastas correspondendo a camadas da arquitetura
 .
 ├── bronze
 │   └── brewery
