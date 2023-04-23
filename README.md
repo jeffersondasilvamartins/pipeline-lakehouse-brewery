@@ -66,7 +66,7 @@ ssh user@xx.xxx.xxx.xx
 ```bash
 cd lakehouse
 
-# Árvore das demais pastas correspondendo a camadas da arquitetura
+# Árvore das demais pastas correspondendo as camadas da arquitetura
 .
 ├── bronze
 │   └── brewery
