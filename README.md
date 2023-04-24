@@ -44,7 +44,7 @@ A carga das tabelas é realizado pela execução da DAG no Airflow, conforme os 
 
 1. Acessando a interface do Airflow <p>
 Clique no link `Airflow UI` para ser direcionado
-<kdb>![Alt text](img/airflow_01.png)</kbd>
+![Alt text](img/airflow_01.png)
 
 2. Selecionado a DAG<p>
 Clicar no link = `dag_pipeline_lakehouse` para acessar a DAG
