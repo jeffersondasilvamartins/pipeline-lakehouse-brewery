@@ -1,5 +1,6 @@
 # Consumindo API e persistindo num Data Lakehouse
-![#](https://img.shields.io/badge/license-Apache-blue)
+
+Select Language: **Portuguese**, [English](https://github.com/jeffersondasilvamartins/pipeline-lakehouse-brewery/README-en.md)
 
 Criação de um Data Lakehouse utilizando arquitetura [Medallion Architecture](https://www.databricks.com/glossary/medallion-architecture)
 
@@ -94,6 +95,8 @@ lakehouse@ubuntu-s-4vcpu-8gb-intel-fra1-01:~$ cd lakehouse
     └── brewery
 ```
 📌 Navegue entres as pastas para verificar os arquivos criados
+***
+## English Version
 ***
 
 <a href="https://www.digitalocean.com/?refcode=20e91ebaafe6&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
