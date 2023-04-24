@@ -58,6 +58,9 @@ Uma nova coluna 🔲 de execução será exibida
 Progresso da execução será sinalizada com a mudança na cor da coluna (:green_square: indica execução com sucesso)<p>
 ![Alt text](img/airflow_16.png)
 
+> **Aguardar a finalização de todos os steps.**
+
+
 ***
 ## :rocket: Acessando Storage
 
