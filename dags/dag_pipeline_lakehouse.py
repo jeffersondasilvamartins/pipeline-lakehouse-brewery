@@ -60,7 +60,7 @@ with DAG(dag_id=f'dag_pipeline_lakehouse',
             schedule_interval=None,
             catchup=False,
             max_active_tasks=10,
-            max_active_runs=1,
+            max_active_runs=5,
             tags=['spark', 'silver','bees']
 ) as dag:
 
