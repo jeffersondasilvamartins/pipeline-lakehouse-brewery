@@ -1,6 +1,6 @@
 # Consumindo API e persistindo num Data Lakehouse
 
-Select Language: **Portuguese**, [English](https://github.com/jeffersondasilvamartins/pipeline-lakehouse-brewery/README-en.md)
+Select Language: **Portuguese**, [English](https://github.com/jeffersondasilvamartins/pipeline-lakehouse-brewery/blob/main/README-en.md)
 
 Criação de um Data Lakehouse utilizando arquitetura [Medallion Architecture](https://www.databricks.com/glossary/medallion-architecture)
 
