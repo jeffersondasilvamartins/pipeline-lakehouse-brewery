@@ -52,8 +52,8 @@ Clicar no link = `dag_pipeline_lakehouse` para acessar a DAG
 3. Executando a DAG<p>
 **Agora sim**, clique no play para iniciar a execução
 ![Alt text](img/airflow_14.png)
-4. Acompanhamento execução
-Uma nova coluna de execução será exibida 🔲<p>
+4. Acompanhamento execução<p>
+Uma nova coluna🔲de execução será exibida
 ![Alt text](img/airflow_15.png)
 Progresso da execução será sinalizada com a mudança na cor da coluna (:green_square: indica execução com sucesso)
 ![Alt text](img/airflow_16.png)
