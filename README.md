@@ -43,17 +43,17 @@ Na pasta `scripts/sql` temos o *SELECT* para criação da visão de negócio
 A carga das tabelas é realizado pela execução da DAG no Airflow, conforme os passos a seguir.
 
 1. Acessando a interface do Airflow <p>
-Clique no link `Airflow UI` para ser direcionado
+Clique no link `Airflow UI` para ser direcionado <p>
 ![Alt text](img/airflow_01.png)
 
 2. Selecionado a DAG<p>
-Clicar no link = `dag_pipeline_lakehouse` para acessar a DAG
+Clicar no link = `dag_pipeline_lakehouse` para acessar a DAG <p>
 ![Alt text](img/airflow_10.png)
 3. Executando a DAG<p>
-**Agora sim**, clique no play para iniciar a execução
+**Agora sim**, clique no play para iniciar a execução <p>
 ![Alt text](img/airflow_14.png)
 4. Acompanhamento execução<p>
-Uma nova coluna 🔲 de execução será exibida
+Uma nova coluna 🔲 de execução será exibida <p>
 ![Alt text](img/airflow_15.png)<p>
 Progresso da execução será sinalizada com a mudança na cor da coluna (:green_square: indica execução com sucesso)<p>
 ![Alt text](img/airflow_16.png)
