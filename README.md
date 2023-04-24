@@ -40,22 +40,22 @@ Na pasta `scripts/sql` temos o *SELECT* para criação da visão de negócio
 ***
 
 ## Execução das DAGs
-A carga das tabelas é realizado pela execução da DAG no Airflow, conforme mostrado a seguir.
+A carga das tabelas é realizado pela execução da DAG no Airflow, conforme os passos a seguir.
 
 1. Acessando a interface do Airflow <p>
-Clique no link `Airflow UI` para ser direcionada para a
+Clique no link `Airflow UI` para ser direcionado
 ![Alt text](img/airflow_01.png)
 
-2. Abrir a DAG<p>
-Clicar no link = `dag_pipeline_lakehouse` conforme imagem a seguir
+2. Selecionado a DAG<p>
+Clicar no link = `dag_pipeline_lakehouse` para acessar a DAG
 ![Alt text](img/airflow_10.png)
 3. Executando a DAG<p>
-**Agora sim**, clique no play para iniciar a execução conforme imagem abaixo
+**Agora sim**, clique no play para iniciar a execução
 ![Alt text](img/airflow_14.png)
 4. Acompanhamento execução
-Uma nova coluna de execução será exibida 🔲
+Uma nova coluna de execução será exibida 🔲<p>
 ![Alt text](img/airflow_15.png)
-O progresso da execução será sinalizada com a mudança da cor na coluna por linha (:green_square: indica execução com sucesso)
+Progresso da execução será sinalizada com a mudança na cor da coluna (:green_square: indica execução com sucesso)
 ![Alt text](img/airflow_16.png)
 
 ***
@@ -93,6 +93,4 @@ lakehouse@ubuntu-s-4vcpu-8gb-intel-fra1-01:~$ cd lakehouse
 📌 Navegue entres as pastas para verificar os arquivos criados
 ***
 
-
-***
 <a href="https://www.digitalocean.com/?refcode=20e91ebaafe6&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
