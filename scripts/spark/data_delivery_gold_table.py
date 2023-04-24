@@ -33,14 +33,16 @@ def main():
     setLogLevel = "ERROR"
     spark.sparkContext.setLogLevel(setLogLevel)
 
-    #Read bronze delta table
+    #Read SILVER delta table
     log.info(f'Loading Silver table - {silver_bucket}/{silver_table}')
     delta_silver_table = DeltaTable.forPath(spark, f'{silver_bucket}/{silver_table}')
     df = delta_silver_table.toDF()
 
-    #Create tempory table
+    #Create temporary table
     df.createOrReplaceTempView("tb_brewery")
     sql = read_sql_file(sql_file)
+
+    #SQL execute
     df_gold = spark.sql(sql)
 
     log.info(f'Create Gold table - {gold_bucket}/{gold_table}')
@@ -51,8 +53,10 @@ def main():
         .save(f'{gold_bucket}/{gold_table}')
     )
 
+    #just print all the dataset result
     df_gold.show(df_gold.count(), False)
 
+    #stop session
     spark.stop()
 
 if __name__ == "__main__":

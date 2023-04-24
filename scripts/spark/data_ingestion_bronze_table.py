@@ -33,7 +33,7 @@ def main():
     headers = {}
 
     #Get metadata
-    #Total the pages and records by page
+    #Total the pages
     url= "https://api.openbrewerydb.org/v1/breweries/meta"
     response = requests.request("GET", url, headers=headers, data=payload)
 
@@ -58,7 +58,7 @@ def main():
             .json(sc.parallelize([json.dumps(breweries)]))
 
     #metadata & hash field
-    schema = df.dtypes
+    #hash_field will be used to compare any column value change
     df_source = df\
                 .withColumn("ingestion_time", lit(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))\
                 .withColumn("system_name", lit("api.openbrewerydb"))\
@@ -73,6 +73,7 @@ def main():
         .save(f'{bucket}/{table}')
     )
 
+    #stop session
     spark.stop()
 
 if __name__ == "__main__":

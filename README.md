@@ -40,32 +40,47 @@ Na pasta `scripts/sql` temos o *SELECT* para criação da visão de negócio
 ***
 
 ## Execução das DAGs
-Clique no link para ser direcionada para a `Airflow UI` 
+A carga das tabelas é realizado pela execução da DAG no Airflow, conforme mostrado a seguir.
 
+1. Acessando a interface do Airflow <p>
+Clique no link `Airflow UI` para ser direcionada para a
 ![Alt text](img/airflow_01.png)
 
-### Executar carga do Pipeline
-Clicar no link = `dag_pipeline_lakehouse` em seguida no play conforme imagens abaixo
+2. Abrir a DAG<p>
+Clicar no link = `dag_pipeline_lakehouse` conforme imagem a seguir
 ![Alt text](img/airflow_10.png)
-![Alt text](img/airflow_12.png)
+3. Executando a DAG<p>
+**Agora sim**, clique no play para iniciar a execução conforme imagem abaixo
+![Alt text](img/airflow_14.png)
+4. Acompanhamento execução
+Uma nova coluna de execução será exibida 🔲
+![Alt text](img/airflow_15.png)
+O progresso da execução será sinalizada com a mudança da cor na coluna por linha (:green_square: indica execução com sucesso)
+![Alt text](img/airflow_16.png)
+
 ***
 ## :rocket: Acessando Storage
 
 :closed_lock_with_key: Conectando na Virtual Machine<p>
->_Máquina Windows instalar algum aplicativo para conexão ssh_
+Para verificar os arquivos gerados assim como a estrutura de pastas, será necessário conectar na máquina remota.
 
 Abrir um terminal:
+>_Máquina Windows instalar algum aplicativo para conexão ssh_.<p>
+> Sugestão utilize o putty [download here](https://www.putty.org/)
 
 #### Step by step 
-1. Conexão via ssh
+1. Realizar conexão remota via SSH
 ```bash
-ssh user@xx.xxx.xxx.xx
+-> ssh lahouse@xx.xxx.xxx.xx
+# 👇 Após digitar a senha seu prompt deve ser alterado conforme tela. 👇
 ```
-2. Ir pra a pasta principal
-```bash
-cd lakehouse
+![Alt text](img/airflow_13.png)
 
-# Árvore das demais pastas correspondendo as camadas da arquitetura
+2. Ir para o diretório principal do lakehouse
+```bash
+lakehouse@ubuntu-s-4vcpu-8gb-intel-fra1-01:~$ cd lakehouse
+
+# 📁 Árvore de pastas conforme as camadas da arquitetura
 .
 ├── bronze
 │   └── brewery
@@ -75,6 +90,9 @@ cd lakehouse
 └── silver
     └── brewery
 ```
+📌 Navegue entres as pastas para verificar os arquivos criados
+***
+
 
 ***
 <a href="https://www.digitalocean.com/?refcode=20e91ebaafe6&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>

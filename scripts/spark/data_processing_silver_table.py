@@ -57,6 +57,7 @@ def main():
         F.col('system_name').alias('system_name'),
     )
 
+    #Change Null value
     df_brewery_select = df_brewery_select\
                             .na.fill('unknown', ["latitude"])\
                             .na.fill('unknown', ['longitude'])
@@ -95,7 +96,7 @@ def main():
         )
     except:
         log.info(f'Full load - New table - {silver_bucket}/{table}')
-
+        #write delta table partitioned
         (df_brewery_select.write
             .format('delta')
             .option("overwriteSchema", "true")
@@ -104,6 +105,7 @@ def main():
             .save(f'{silver_bucket}/{table}')
         )
 
+    #stop session
     spark.stop()
 
 if __name__ == "__main__":
